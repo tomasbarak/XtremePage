@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xtreme Designs</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="slider.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <script src="includeSlider.js"></script>
+</head>
+<body onload="includeHTML()">
+
+    <div style="height: 100%; width: 100%;" w3-include-html="slider.html"></div>
+
+    <script>
+        var actualSlide = 0;
+        let baseUrl = window.location.origin;
+        setInterval(function(){
+            nextSlide();
+        }, 5000)
+
+        function nextSlide(){
+            if(actualSlide < 4){
+                setSlide(actualSlide + 1);
+                actualSlide ++;
+            }else{
+                setSlide(1);
+                actualSlide = 1; 
+            }
+        }
+        function setSlide(slideNum){
+            window.location.href = baseUrl + '/' + '#s' + slideNum;
+        }
+    </script>
+</body>
+</html>
