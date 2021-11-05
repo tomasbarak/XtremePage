@@ -14,18 +14,98 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <script src="includeSlider.js"></script>
+    <link rel="stylesheet" href="index.css">
+
 </head>
 <body onload="includeHTML()">
 
-    <div style="height: 100%; width: 100%;" w3-include-html="slider.html"></div>
+    <div style="height: 100vh; width: 100%;" w3-include-html="slider.html"></div>
+    
+    <div class="about-us">
+        <h1>About Us</h1>
+    </div>
+    
+    <h1 id="titulo-modelos">Modelos</h1>
 
+    <div class="contenedor-tarjetas-modelos">
+        <div class="tarjetas-modelos">
+            <img src="modelos/cupraateca.png" alt="Imagen">
+            <h4>Cupra Ateca</h4>
+            <p>Un SUV con la tecnología que necesitas para sentir el camino y una potencia a la altura de su diseño.</p>
+            <a href="#">Ver más</a>
+        </div>
+
+        <div class="tarjetas-modelos">
+            <img src="modelos/cupraformentor.png" alt="Imagen">
+            <h4>Cupra Formentor</h4>
+            <p>El primer modelo desarrollado específicamente para CUPRA. Un híbrido de alto rendimiento destinado a cambiar el mundo.</p>
+            <a href="#">Ver más</a>
+        </div>
+
+        <div class="tarjetas-modelos">
+            <img src="modelos/cupraleon.png" alt="Imagen">
+            <h4>Cupra León</h4>
+            <p>Todo el diseño y la potencia con el ADN de los circuitos. Te verán pasar.</p>
+            <a href="#">Ver más</a>
+        </div>
+
+        <div class="tarjetas-modelos">
+            <img src="modelos/cupraborn.png" alt="Imagen">
+            <h4>Cupra Born</h4>
+            <p>El CUPRA Born demuestra que el rendimiento y la electrificación son una combinación perfecta.</p>
+            <a href="#">Ver más</a>
+        </div>
+
+        <div class="tarjetas-modelos">
+            <img src="modelos/cupraleonsporttourer.png" alt="Imagen">
+            <h4>Cupra SportTourer</h4>
+            <p>Un híbrido enchufable de alto rendimiento con tracción 4drive.</p>
+            <a href="#">Ver más</a>
+        </div>
+
+        <div class="tarjetas-modelos">
+            <img src="modelos/cupraurbanrebel.png" alt="Imagen">
+            <h4>Cupra UrbanRebel</h4>
+            <p>La interpretación más radical de un coche eléctrico urbano.</p>
+            <a href="#">Ver más</a>
+        </div>
+
+        <div class="tarjetas-modelos">
+            <img src="modelos/cupraleoncompeticion.png" alt="Imagen">
+            <h4>Cupra León Competición</h4>
+            <p>Gracias a la tecnología más avanzada de las impresoras 3D, nacen las tomas de aire más aerodinámicas que jamás hayamos fabricado.</p>
+            <a href="#">Ver más</a>
+        </div>
+
+        <div class="tarjetas-modelos">
+            <img src="modelos/cupraeracer.png" alt="Imagen">
+            <h4>Cupra E-Racer</h4>
+            <p>El primer coche de carreras 100% eléctrico tiene un nuevo diseño. Más dinámico. Más potente. Y cero emisiones.</p>
+            <a href="#">Ver más</a>
+        </div>
+
+        <div class="tarjetas-modelos">
+            <img src="modelos/cupratavascan.png" alt="Imagen">
+            <h4>Cupra Tavascan</h4>
+            <p>Descubre el primer CUPRA 100% eléctrico.</p>
+            <a href="#">Ver más</a>
+        </div>
+    </div>
     <script>
         var actualSlide = 0;
         let baseUrl = window.location.origin;
-        setInterval(function(){
-            nextSlide();
-        }, 5000)
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+        let html = document.getElementsByTagName('HTML')[0];
+        
+        var sliderAutoScroll = setInterval(function(){
+            console.log(html.scrollTop, vh);
 
+            if(html.scrollTop < vh/2){
+                nextSlide();
+            }else{
+
+            }
+        }, 5000)
         function nextSlide(){
             if(actualSlide < 4){
                 setSlide(actualSlide + 1);
@@ -38,6 +118,10 @@
         function setSlide(slideNum){
             window.location.href = baseUrl + '/' + '#s' + slideNum;
         }
+
     </script>
+
+    
+
 </body>
 </html>
