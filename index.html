@@ -93,7 +93,7 @@
     </div>
     <script>
         var actualSlide = 0;
-        let baseUrl = window.location.origin;
+        let href = window.location.href;
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
         let html = document.getElementsByTagName('HTML')[0];
         
@@ -116,7 +116,7 @@
             }
         }
         function setSlide(slideNum){
-            window.location.href = baseUrl + '/index.html' + '#s' + slideNum;
+            window.location.href = href + '#s' + slideNum;
         }
 
     </script>
