@@ -21,10 +21,6 @@
 
     <div style="height: 100vh; width: 100%;" w3-include-html="slider.html"></div>
     
-    <div class="about-us">
-        <h1>About Us</h1>
-    </div>
-    
     <h1 id="titulo-modelos">Modelos</h1>
 
     <div class="contenedor-tarjetas-modelos">
@@ -91,6 +87,13 @@
             <a href="#">Ver más</a>
         </div>
     </div>
+
+    <div class="about-us">
+        <h1>About us</h1>
+        <p>We are Xtreme desings, a car design comapany mostly for Cupra, its a company created by John Cena, and its promotored by audi, cupra, john cena, bmw</p>
+        <img src="imagenes-aboutus/imagen-aboutus.png" alt="Imagen">
+    </div>
+
     <script>
         var actualSlide = 0;
         let href = window.location.href;
@@ -116,12 +119,12 @@
             }
         }
         function setSlide(slideNum){
-            window.location.href = href + '#s' + slideNum;
+            let href = window.location.href
+            let simpleHref = href.substring(0, href.indexOf("#"));
+            window.location.href = simpleHref + '#s' + slideNum;
         }
 
     </script>
-
-    
 
 </body>
 </html>
